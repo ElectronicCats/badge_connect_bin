@@ -1,8 +1,8 @@
 ## IDF Component Manager Manifest File
 version: "1.0.0"
 description: "Electronic Cats Badge Connect Library"
-url: "https://github.com/ElectronicCats/badge_connect_src"
-repository: "https://github.com/ElectronicCats/badge_connect_src"
+url: "https://github.com/ElectronicCats/badge_connect_bin"
+repository: "https://github.com/ElectronicCats/badge_connect_bin"
 license: "GPL-3.0-only"
 dependencies:
   espressif/esp-now: "^2.5.1"
