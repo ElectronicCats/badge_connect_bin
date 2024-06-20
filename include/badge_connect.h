@@ -51,6 +51,13 @@ typedef void (*badge_connect_recv_cb_t)(badge_connect_recv_msg_t* msg);
 void badge_connect_init();
 
 /**
+ * @brief Deinitialize the badge connect module
+ *
+ * @return void
+ */
+void badge_connect_deinit();
+
+/**
  * @brief Set the badge type to BSides
  *
  * @return void
@@ -81,12 +88,13 @@ void badge_connect_set_bugcon_badge();
 /**
  * @brief Send data to the badge connect module
  *
+ * @param addr The address to send the data to
  * @param data The data to send
  * @param data_size The size of the data
  *
  * @return void
  */
-void badge_connect_send(void* data, size_t data_size);
+void badge_connect_send(uint8_t* addr, void* data, size_t data_size);
 
 /**
  * @brief Register a callback function to receive data
