@@ -24,7 +24,7 @@
 
 #include <stdint.h>
 #include "esp_err.h"
-#include "esp_wifi.h"
+#include "espnow.h"
 
 typedef struct {
   bool is_bsides;
@@ -60,12 +60,23 @@ void badge_connect_deinit();
 /**
  * @brief Set the badge type to BSides
  *
+ * Available on:
+ * - BSides
+ * - DragonJAR
+ * - Ekoparty
+ * - BugCon
+ *
  * @return void
  */
 void badge_connect_set_bsides_badge();
 
 /**
  * @brief Set the badge type to DragonJAR
+ *
+ * Available on:
+ * - DragonJAR
+ * - Ekoparty
+ * - BugCon
  *
  * @return void
  */
@@ -74,12 +85,19 @@ void badge_connect_set_dragonjar_badge();
 /**
  * @brief Set the badge type to Ekoparty
  *
+ * Available on:
+ * - Ekoparty
+ * - BugCon
+ *
  * @return void
  */
 void badge_connect_set_ekoparty_badge();
 
 /**
  * @brief Set the badge type to BugCon
+ *
+ * Available on:
+ * - BugCon
  *
  * @return void
  */

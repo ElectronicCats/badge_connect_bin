@@ -73,7 +73,8 @@ void send_int_data() {
   // It can by any size, just be sure to cast it correctly in receive_data_cb,
   // check 8 bits cast issue
   uint32_t data = 1025;
-  badge_connect_send(&data, sizeof(data));
+  uint8_t* addr = ESPNOW_ADDR_BROADCAST;  // Send to all badges
+  badge_connect_send(addr, &data, sizeof(data));
 }
 
 void app_main(void) {

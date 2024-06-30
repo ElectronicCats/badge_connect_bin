@@ -23,6 +23,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "badge_connect.h"
+#include "esp_wifi.h"
 #include "nvs_flash.h"
 
 void nvs_init() {
@@ -64,7 +65,8 @@ void receive_data_cb(badge_connect_recv_msg_t* msg) {
 
 void send_string_data() {
   char* data = "Hello, world!";
-  badge_connect_send(data, strlen(data));
+  uint8_t* addr = ESPNOW_ADDR_BROADCAST;  // Send to all badges
+  badge_connect_send(addr, data, strlen(data));
 }
 
 void app_main(void) {
