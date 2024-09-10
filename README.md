@@ -16,39 +16,27 @@ This library is designed to provide a simple API in order to communicate electro
 
 ## Installation
 
-Add badge_connect_bin as a dependency in the `idf_component.yml` file of your badge project.
+Add badge_connect_bin as a git submodule in your project.
 
-```yml
-  badge_connect:
-    git: https://github.com/ElectronicCats/badge_connect_bin
-    version: "1.0.0"
+```bash
+git submodule add https://github.com/ElectronicCats/badge_connect_bin.git firmware/components/badge_connect
 ```
-
-> Replace the version with the latest release.
 
 ## Usage
 
-1. Add the root of this repository to the component search path of your `CMakeLists.txt` file in your project.
-
-```cmake
-set(EXTRA_COMPONENT_DIRS "/path/to/badge_connect_src")
-```
-
-> Check how this is made in the examples.
-
-2. Include the library in your source code.
+1. Include the library in your source code.
 
 ```c
 #include "badge_connect.h"
 ```
 
-3. Initialize the library in your code.
+2. Initialize the library in your code.
 
 ```c
 badge_connect_init();
 ```
 
-4. Implement the callback function that will be called when a message is received.
+3. Implement the callback function that will be called when a message is received.
 
 ```c
 void receive_data_cb(badge_connect_recv_msg_t* msg) {
@@ -56,13 +44,13 @@ void receive_data_cb(badge_connect_recv_msg_t* msg) {
 }
 ```
 
-5. Register the callback function.
+4. Register the callback function.
 
 ```c
 badge_connect_register_recv_cb(receive_data_cb);
 ```
 
-6. Set the badge's type, choose one of the following:
+5. Set the badge's type, choose one of the following:
 
 ```c
 badge_connect_set_bsides_badge();
@@ -71,14 +59,14 @@ badge_connect_set_ekoparty_badge();
 badge_connect_set_bugcon_badge();
 ```
 
-7. Send a message to another badge.
+6. Send a message to another badge.
 
 ```c
 char* data = "Hello, world!";
 badge_connect_send(data, strlen(data));
 ```
 
-8. Compile and flash!
+7. Compile and flash!
 
 ## Examples
 
