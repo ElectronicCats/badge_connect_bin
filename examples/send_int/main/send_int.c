@@ -83,7 +83,7 @@ void app_main(void) {
   badge_connect_register_recv_cb(receive_data_cb);
   // Set the badge type to BSides, DragonJAR, Ekoparty, or BugCon
   // See README.md or badge_connect.h for more information
-  badge_connect_set_bsides_badge();
+  badge_connect_set_bugcon_badge();
 
   while (true) {
     send_int_data();
